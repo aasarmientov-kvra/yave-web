@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YAVE · Medir la conexión</title>
+<meta name="theme-color" content="#061317">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="simbolo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="medir.css">
+</head>
+<body>
+<main class="caja">
+  <header class="cabeza">
+    <img src="simbolo.svg" alt="" width="40" height="40">
+    <div>
+      <p class="sello">YAVE</p>
+      <h1>Medir la conexión</h1>
+    </div>
+  </header>
+
+  <p class="intro">Esta página mide qué tan rápido responde la nube de YAVE desde aquí. Ábrela en el <strong>celular de portería</strong>, conectado al <strong>wifi del taller</strong>, y toca «Medir». Tarda menos de un minuto y no guarda datos de nadie.</p>
+
+  <div id="aviso" class="aviso" hidden></div>
+
+  <section id="formulario">
+    <fieldset class="grupo">
+      <legend>¿Desde dónde mides?</legend>
+      <div class="opciones" data-campo="equipo">
+        <button type="button" data-valor="Celular de portería" aria-pressed="true">Celular de portería</button>
+        <button type="button" data-valor="Tablet del taller" aria-pressed="false">Tablet del taller</button>
+        <button type="button" data-valor="Otro equipo" aria-pressed="false">Otro equipo</button>
+      </div>
+    </fieldset>
+    <fieldset class="grupo">
+      <legend>¿Cómo está conectado?</legend>
+      <div class="opciones" data-campo="conexion">
+        <button type="button" data-valor="Wifi del taller" aria-pressed="true">Wifi del taller</button>
+        <button type="button" data-valor="Datos del celular" aria-pressed="false">Datos del celular</button>
+      </div>
+    </fieldset>
+    <button type="button" id="medir" class="principal">Medir</button>
+  </section>
+
+  <section id="regiones" class="regiones" aria-live="polite"></section>
+
+  <section id="final" class="final" hidden aria-live="polite">
+    <p id="finalTexto"></p>
+    <button type="button" id="reenviar" class="secundario" hidden>Volver a enviar</button>
+    <button type="button" id="otraVez" class="secundario">Medir otra vez</button>
+  </section>
+</main>
+<script src="supabase.js" integrity="sha384-BWcjm9OdFth9TbhCxZPdm+gAOUMAzQy9nmTs12ioXdCcbVnJaPMn+fMUoQCLt60R" crossorigin="anonymous"></script>
+<script src="config.js"></script>
+<script src="medir.js"></script>
+</body>
+</html>
